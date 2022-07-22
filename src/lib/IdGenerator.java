@@ -6,7 +6,7 @@ import java.util.List;
 public class IdGenerator {
 
     /**
-     *   Class, which generates unique ID and saves old.
+     *   Class, which generates unique ID and saves to system.
      *   ID consists of 10 characters (lowercase latin characters and 0-9 numbers).
      *   If generated ID already in system, recursively generates new.
      */
