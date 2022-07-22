@@ -3,14 +3,14 @@ package lib;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *   Class, which generates unique ID and saves to system.
+ *   • ID consists of 10 characters (lowercase latin characters and 0-9 numbers).
+ *   • If generated ID already in system, recursively generates new.
+ *   • Remove method if id currently not used.
+ *   • Check method for ID existence in generator.
+ */
 public class IdGenerator {
-
-    /**
-     *   Class, which generates unique ID and saves to system.
-     *   ID consists of 10 characters (lowercase latin characters and 0-9 numbers).
-     *   If generated ID already in system, recursively generates new.
-     */
-
 
     private static final List<String> generatedIDs = new ArrayList<>();
     private static final String usingChars = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -19,7 +19,10 @@ public class IdGenerator {
 
 
 
-
+    /**
+     * Method for unique ID generating
+     * @return generated ID
+     */
     public static String genID() {
         StringBuilder id = new StringBuilder();
 
@@ -32,6 +35,11 @@ public class IdGenerator {
         return res;
     }
 
+    /**
+     * Method for ID existence check generator
+     * @param id id to check in system
+     * @return boolean variable, representing if current id already exists
+     */
     public static boolean hasID(String id) {
         for (String i: generatedIDs)
             if (id.equals(i))
@@ -39,10 +47,15 @@ public class IdGenerator {
         return false;
     }
 
-    public static String removeID(String id) {
+    /**
+     * Method for ID remove from generator
+     * @param id id to remove from generator list
+     * Throws exception if id not found.
+     */
+    public static void removeID(String id) {
         for (int i = 0 ; i < generatedIDs.size() ; i++) {
             if (id.equals(generatedIDs.get(i))){
-                return generatedIDs.remove(i);
+                generatedIDs.remove(i);
             }
         }
 

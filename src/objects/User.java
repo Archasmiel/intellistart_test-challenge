@@ -1,6 +1,11 @@
 package objects;
 
-
+/**
+ * User object<br>
+ * • name String - user name<br>
+ * • lastname String - user last name<br>
+ * • money float - user money
+ */
 public class User {
 
     private final String name;
@@ -36,8 +41,10 @@ public class User {
         return money;
     }
 
-    public void setMoney(float money) {
-        this.money = money;
+
+
+    public void buyProduct(Product product) {
+        this.money -= product.getPrice();
     }
 
 }

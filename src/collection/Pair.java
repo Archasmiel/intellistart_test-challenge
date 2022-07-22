@@ -1,4 +1,4 @@
-package objects;
+package collection;
 
 public class Pair<A, B> {
 
